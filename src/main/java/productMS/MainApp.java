@@ -17,8 +17,27 @@ public class MainApp {
 
         System.out.println("Products sorted by price (ascending):");
         manager.sortProductsByPriceAscending();
+        manager.printAllProducts();
+
+        System.out.println("\nProducts sorted by price (descending):");
         manager.sortProductsByPriceDescending();
+        manager.printAllProducts();
+
+        System.out.println("\nIn-stock products:");
         manager.printInStockProducts();
+
+        System.out.println("\nProducts with 'Desk' in the name:");
+        manager.filterAndPrintDeskProducts();
+
+        System.out.println("\nCheapest product:");
+        manager.getAndPrintCheapestProduct();
+
+        System.out.println("\nProducts sorted by rating (descending):");
+        manager.sortProductsByRatingDescending();
+        manager.printAllProducts();
+
+        System.out.println("\nAll products:");
+        manager.printAllProducts();
 
 
     }
