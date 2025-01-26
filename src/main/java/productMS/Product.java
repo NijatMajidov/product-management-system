@@ -7,6 +7,13 @@ public class Product implements Comparable<Product> {
     private double rating;
     boolean inStock;
 
+    public Product(String name, String category, double price, double rating, boolean inStock) {
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.rating = rating;
+        this.inStock = inStock;
+    }
 
     public String getName() {
         return name;
