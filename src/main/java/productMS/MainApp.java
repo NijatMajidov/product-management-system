@@ -5,6 +5,7 @@ import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
+
         List<Product> productList = new ArrayList<>();
         productList.add(new Product("Laptop", "Electronics", 1200, 4.5, true));
         productList.add(new Product("Smartphone", "Electronics", 800, 4.7, true));
@@ -17,11 +18,9 @@ public class MainApp {
 
         System.out.println("Products sorted by price (ascending):");
         manager.sortProductsByPriceAscending();
-        manager.printAllProducts();
 
         System.out.println("\nProducts sorted by price (descending):");
         manager.sortProductsByPriceDescending();
-        manager.printAllProducts();
 
         System.out.println("\nIn-stock products:");
         manager.printInStockProducts();
@@ -34,11 +33,8 @@ public class MainApp {
 
         System.out.println("\nProducts sorted by rating (descending):");
         manager.sortProductsByRatingDescending();
-        manager.printAllProducts();
 
         System.out.println("\nAll products:");
         manager.printAllProducts();
-
-
     }
 }
