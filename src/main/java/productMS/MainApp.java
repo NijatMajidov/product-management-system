@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainApp {
+
     public static void main(String[] args) {
 
         List<Product> productList = new ArrayList<>();
@@ -16,7 +17,10 @@ public class MainApp {
 
         ProductManager manager = new ProductManager(productList);
 
-        System.out.println("Products sorted by price (ascending):");
+        System.out.println("\nAll products:");
+        manager.printAllProducts();
+
+        System.out.println("\nProducts sorted by price (ascending):");
         manager.sortProductsByPriceAscending();
 
         System.out.println("\nProducts sorted by price (descending):");
@@ -33,8 +37,5 @@ public class MainApp {
 
         System.out.println("\nProducts sorted by rating (descending):");
         manager.sortProductsByRatingDescending();
-
-        System.out.println("\nAll products:");
-        manager.printAllProducts();
     }
 }

@@ -8,7 +8,7 @@ public class Product implements Comparable<Product> {
     private String category;
     private double price;
     private double rating;
-    boolean inStock;
+    private boolean inStock;
 
     public Product(String name, String category, double price, double rating, boolean inStock) {
         this.name = name;
@@ -78,12 +78,7 @@ public class Product implements Comparable<Product> {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", price=" + price +
-                ", rating=" + rating +
-                ", inStock=" + inStock +
-                '}';
+        return "Product{" + "name='" + name + '\'' + ", category='" + category + '\'' + ", price=" + price +
+                ", rating=" + rating + ", inStock=" + inStock + '}';
     }
 }
