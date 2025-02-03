@@ -77,7 +77,7 @@ public class StudentApp {
         scanner.nextLine();
 
         Student student = new Student(id, name, age, grade);
-        students.add(student);
+        studentManager.addStudent(student);
         System.out.println("Student added successfully!");
     }
 

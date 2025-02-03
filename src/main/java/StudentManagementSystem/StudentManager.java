@@ -8,6 +8,10 @@ public class StudentManager {
     private LinkedList<Student> linkedList = new LinkedList<>();
     private Set<String> BackEnd = new HashSet<>();
 
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
     public Student searchById(int id) {
         for (Student s : students) {
             if (s.getId() == id) {
