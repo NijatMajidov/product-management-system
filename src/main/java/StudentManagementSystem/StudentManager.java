@@ -12,6 +12,14 @@ public class StudentManager {
         students.add(student);
     }
 
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public boolean removeStudent(int id) {
+        return students.removeIf(s -> s.getId() == id);
+    }
+
     public Student searchById(int id) {
         for (Student s : students) {
             if (s.getId() == id) {
@@ -97,5 +105,8 @@ public class StudentManager {
         merged.addAll(left.subList(i, left.size()));
         merged.addAll(right.subList(j, right.size()));
         return merged;
+    }
+    public void sortById() {
+        students.sort(Comparator.comparingInt(Student::getId));
     }
 }

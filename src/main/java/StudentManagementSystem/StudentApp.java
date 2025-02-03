@@ -6,7 +6,6 @@ import java.util.Comparator;
 import static util.InputUtil.scanner;
 
 public class StudentApp {
-    private static List<Student> students = new ArrayList<>();
     private static StudentManager studentManager = new StudentManager();
 
     public static void main(String[] args) {
@@ -86,9 +85,8 @@ public class StudentApp {
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        Student studentToRemove = studentManager.searchById(id);
-        if (studentToRemove != null) {
-            students.remove(studentToRemove);
+        boolean removed = studentManager.removeStudent(id);
+        if (removed) {
             System.out.println("Student removed successfully!");
         } else {
             System.out.println("Student not found!");
@@ -120,12 +118,12 @@ public class StudentApp {
     }
 
     private static void sortStudentsById() {
-        students.sort(Comparator.comparingInt(Student::getId));
+        studentManager.sortById();
         System.out.println("Students sorted by ID.");
     }
 
     private static void sortStudentsByName() {
-        students = studentManager.mergeSortByName(students);
+        studentManager.mergeSortByName(studentManager.getStudents());
         System.out.println("Students sorted by Name.");
     }
 
@@ -140,11 +138,12 @@ public class StudentApp {
     }
 
     private static void displayStudents() {
-        if (students.isEmpty()) {
+        List<Student> studentList = studentManager.getStudents();
+        if (studentList.isEmpty()) {
             System.out.println("No students to display.");
         } else {
             System.out.println("List of Students:");
-            for (Student student : students) {
+            for (Student student : studentList) {
                 System.out.println(student);
             }
         }
